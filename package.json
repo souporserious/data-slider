@@ -1,6 +1,6 @@
 {
   "name": "data-slider",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple slider that allows data attributes to control it.",
   "main": "index.js",
   "scripts": {
