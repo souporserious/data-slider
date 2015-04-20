@@ -1,0 +1,111 @@
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box; }
+
+.slider {
+  width: auto;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 5; }
+  .slider.draggable {
+    cursor: -webkit-grab;
+    cursor: -moz-grab; }
+  .slider.dragging {
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing; }
+  .slider li {
+    display: block;
+    float: left;
+    height: 100%;
+    position: relative; }
+    .slider li.next:first-child {
+      left: 100%; }
+    .slider li.prev.last-child {
+      right: 100%; }
+    .slider li.target:first-child, .slider li.target.last-child {
+      left: 0;
+      right: 0; }
+
+.controls {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  z-index: 100; }
+
+.slide-prev, .slide-next {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  line-height: 100px;
+  text-align: center;
+  background-color: #2b2b2b;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  z-index: 50;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: all 350ms ease; }
+  .slide-prev:hover, .slide-next:hover {
+    background-color: #000;
+    color: grey; }
+  .slide-prev.disabled, .slide-next.disabled {
+    opacity: 0.25;
+    cursor: not-allowed; }
+  .slide-prev .icon, .slide-next .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+
+.slide-prev {
+  left: 32px; }
+
+.slide-next {
+  right: 32px; }
+
+.slider-pager {
+  position: absolute;
+  bottom: 38px;
+  left: 50%;
+  z-index: 10;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
+
+.slide-page {
+  box-sizing: content-box;
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer; }
+  .slide-page:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-top: 5px solid #000; }
+  .slide-page.active {
+    cursor: default; }
+    .slide-page.active:after {
+      border-top: 5px solid red; }
+
+main {
+  max-width: 800px;
+  margin: 0 auto; }
+  main img {
+    width: 100%; }

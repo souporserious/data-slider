@@ -1,0 +1,141 @@
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.slider {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 5;
+
+    &.draggable {
+        cursor: -webkit-grab;
+        cursor: -moz-grab;
+    }
+
+    &.dragging {
+        cursor: -webkit-grabbing;
+        cursor: -moz-grabbing;
+    }
+
+    li {
+        display: block;
+        float: left;
+        height: 100%;
+        position: relative;
+
+        &.next:first-child {
+            left: 100%;
+        }
+
+        &.prev.last-child {
+            right: 100%;
+        }
+
+        &.target:first-child, &.target.last-child {
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+.controls {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    z-index: 100;
+}
+
+.slide-prev, .slide-next {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+
+    font-size: 25px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #2b2b2b;
+    color: #fff;
+    
+    position: absolute;
+    top: 50%;
+    z-index: 50;
+    transform: translateY(-50%);
+
+    cursor: pointer;
+    user-select: none;
+
+    transition: all 350ms ease;
+
+    &:hover {
+        background-color: #000;
+        color: grey;
+    }
+  
+    &.disabled {
+        opacity: 0.25;
+        cursor: not-allowed;
+    }
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.slide-prev {
+    left: 32px;
+}
+
+.slide-next {
+    right: 32px;
+}
+
+.slider-pager {
+    position: absolute;
+    bottom: 38px;
+    left: 50%;
+    z-index: 10;
+    transform: translateX(-50%);
+}
+
+.slide-page {
+    box-sizing: content-box;
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    padding: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-top: 5px solid #000;
+    }
+
+    &.active {
+        cursor: default;
+
+        &:after {
+            border-top: 5px solid red;
+        }
+    }
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+    }
+}
