@@ -4,6 +4,10 @@ var dataSlider = document.querySelector('[data-slider]');
 
 var slider = new Slider(dataSlider);
 
+setTimeout(function () {
+    slider.destroy();
+}, 3000);
+
 // INSPO
 // http://titon.io/en/toolkit/2.1.1/components/carousel
 // http://kenwheeler.github.io/slick/

@@ -222,8 +222,6 @@
                 this.pages[i].classList.remove('active');
             }
 
-            console.log(index);
-
             // add active class to new pager
             this.pages[index].classList.add('active');
         }
@@ -371,6 +369,11 @@
 
             // remove styling class from slider
             this.slider.classList.remove('slider');
+
+            // remove draggable styling class
+            if(this.options.draggable) {
+                this.slider.classList.remove('draggable');
+            }
             
             // reset slider styles
             this.slider.style.width = '';
@@ -378,9 +381,13 @@
             this.slider.style[this.transform] = '';
             this.slider.style[this.transitionDuration] = '';
             
-            // reset slide widths
+            // reset slide widths and classes
             for(let i = this.slideCount; i--;) {
-                this.slides[i].style.width = '';
+                
+                var slide = this.slides[i];
+
+                slide.style.width = '';
+                slide.className = '';
             }
 
             // unbind all event handlers
